@@ -1,7 +1,4 @@
-/*const channel = new BroadcastChannel("votes");
-      let votes = { kai: 0, umbu: 0, liz: 0 };
-      //let currentIndex = 0;
-      const characters = ["KAI", "UMBU", "LIZ"];*/
+
 
 function nameMode() {
   background(0, 11, 90);
@@ -183,5 +180,28 @@ function yesNoButtons() {
   vertex(halfX + 95, halfY + 180); //arriba derexa
   endShape();
 }
+
+function nuevoComputo(){
+        if (greenPressed) {
+        if (textHere === 'KAI') {
+          votes.kaiVote++;
+          lizVote=true;
+        } else if (textHere === 'UMBU') {
+          votes.umbuVote++;
+          umbuVote=true;
+        } else if (textHere === 'LIZDI' || textHere === 'LIZPI') {
+          votes.lizVote++;
+          lizVote=true;
+        } else {
+          reseteo();
+        }
+        
+        reseteo();
+  /*if(kaiVote || umbuVote || lizVote){
+    channel.onmessage = (event) => {
+  votes = event.data;
+  console.log("Votos actualizados desde otro tab:", votes);*/
+
+  }}
 
 
