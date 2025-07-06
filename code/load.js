@@ -19,7 +19,7 @@ let confirmVote = `¿quieres darle tu,
 //let confirmo;
 
 let nameModeActive;
-let popUpActivo;
+let popUpActive;
 
 let votes = {
   kaiVote: 0,
@@ -36,5 +36,5 @@ const channel = new BroadcastChannel("decisiones");
 let fontLinda;
 
 function preload() {
-  fontLinda = loadFont("/fonts/chelseaMrkt-reg.ttf");
+  fontLinda = loadFont("./fonts/chelseaMrkt-reg.ttf");
 }

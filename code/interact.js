@@ -1,7 +1,7 @@
 
 
 function nameMode() {
-  background(0, 11, 90);
+  background(79 );
   rectMode(CENTER);
 
   /*//////////////////////////////////////
@@ -13,7 +13,7 @@ function nameMode() {
   //////////////////////////////////////*/
 
   //frame mayor
-  fill(200, 220, 250);
+  fill(170);
   noStroke();
   rect(halfX, halfY, 1180, 590, 180);
 
@@ -27,7 +27,7 @@ function nameMode() {
   //sombras flechas - y +
   push();
   strokeJoin(ROUND);
-  stroke(130, 20, 20);
+  stroke(240-80, 155-80, 70-80);
   strokeWeight(100);
   triangle(
     halfX + 429,
@@ -46,7 +46,7 @@ function nameMode() {
     halfY - 50 + 9
   );
   //flechas - y +
-  stroke(240, 20, 20);
+  stroke(240, 155, 70);
   triangle(
     halfX + 420,
     halfY,
@@ -76,8 +76,8 @@ function nameMode() {
   //////////////////////////////////
   //letra del centro
   //fill(0, 11, 90);
-  fill(10, 10, 100);
-  stroke(0, 11, 90);
+  fill(79);
+  stroke(79);
   textSize(140);
   textAlign(CENTER, CENTER);
   textFont(fontLinda);
@@ -94,6 +94,7 @@ function nameMode() {
   let nextLetra = (letraIndex + 1) % abecedario.length;
   text(abecedario[nextLetra], halfX + 150, halfY);
 
+  fill(79);
   textSize(45);
   noStroke();
   textAlign(LEFT);
@@ -148,9 +149,9 @@ function yesNoButtons() {
   //sombra
   noStroke();
   fill(100, 20, 20);
-  rect(halfX - 65 + 5, halfY + 200 + 5, 100, 100, 20);
+  rect(halfX - 65 + 6, halfY + 200 + 6, 100, 100, 20);
   //color
-  fill(200, 100, 100);
+  fill(235, 30, 30);
   noStroke();
   //fill(200);
   rect(halfX - 65, halfY + 200, 100, 100, 20);
@@ -165,10 +166,10 @@ function yesNoButtons() {
   //ticket
   //sombra boton verde
   fill(20, 120, 20);
-  rect(halfX + 65 + 5, halfY + 200 + 5, 100, 100, 20);
+  rect(halfX + 65 + 6, halfY + 200 + 6, 100, 100, 20);
 
   //color verde
-  fill(100, 200, 100);
+  fill(30, 225, 30);
   rect(halfX + 65, halfY + 200, 100, 100, 20);
   /////////////
   stroke(255, 250, 250);
