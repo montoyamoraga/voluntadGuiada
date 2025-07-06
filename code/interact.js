@@ -98,6 +98,7 @@ function nameMode() {
   textSize(45);
   noStroke();
   textAlign(LEFT);
+  textFont(fontBold);
   text(textHere, halfX - 240, halfY - 206);
 
   //cursor

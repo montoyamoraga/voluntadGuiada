@@ -34,7 +34,20 @@ const channel = new BroadcastChannel("decisiones");
 
 
 let fontLinda;
+let fontRegular;
+let fontMedium;
+let fontSemiBold;
+let fontBold;
+let fontExtraBold;
+let fontBlack;
+
 
 function preload() {
   fontLinda = loadFont("./fonts/chelseaMrkt-reg.ttf");
+  fontRegular = loadFont("./fonts/mirador-regular.otf");
+  fontMedium = loadFont("./fonts/mirador-medium.otf");
+  fontSemiBold = loadFont("./fonts/mirador-semibold.otf");
+  fontBold = loadFont("./fonts/mirador-bold.otf");
+  fontExtraBold = loadFont("./fonts/mirador-extrabold.otf");
+  fontBlack = loadFont("./fonts/mirador-black.otf");
 }
