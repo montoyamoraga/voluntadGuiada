@@ -96,12 +96,3 @@ function reseteo() {
   nameModeActive = true;
   textHere = "";
 }
-
-/*// Al confirmar un voto:
-function confirmarVoto() {
-    if (textHere === 'KAI') votes.kaiVote++;
-    else if (textHere === 'UMBU') votes.umbuVote++;
-    else if (textHere === 'LIZ') votes.lizVote++;
-    
-    channel.postMessage(votes); // Enviar a results.html
-}*/
