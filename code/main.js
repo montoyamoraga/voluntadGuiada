@@ -1,3 +1,10 @@
+channel.onmessage = function(event) {
+  votes = event.data;
+  // If your UI doesn't update automatically, force a redraw or update here
+  // For p5.js, draw() is called in a loop, so this may be enough
+  // Optionally, log to see updates:
+  console.log("Votos actualizados desde otro tab:", votes);
+};
 
 function setup() {
   createCanvas(1280, 720);
@@ -67,7 +74,7 @@ nuevoComputo();
       mouseY < halfY + 250
     ) {
       textHere += abecedario[letraIndex];
-      if (["KAI", "UMBU", "LIZ", "LIF"].includes(textHere)) {
+      if (["KAI", "HUMBU", "LIZPI", "LIZDI"].includes(textHere)) {
         popUpActive = true;
         nameModeActive = false;
       }
@@ -90,11 +97,11 @@ function reseteo() {
   textHere = "";
 }
 
-// Al confirmar un voto:
+/*// Al confirmar un voto:
 function confirmarVoto() {
-    if (textHere === 'KAI') votes.kai++;
-    else if (textHere === 'UMBU') votes.umbu++;
-    else if (textHere === 'LIZ') votes.liz++;
+    if (textHere === 'KAI') votes.kaiVote++;
+    else if (textHere === 'UMBU') votes.umbuVote++;
+    else if (textHere === 'LIZ') votes.lizVote++;
     
     channel.postMessage(votes); // Enviar a results.html
-}
+}*/

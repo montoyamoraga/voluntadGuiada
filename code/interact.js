@@ -188,7 +188,7 @@ function nuevoComputo(){
         if (textHere === 'KAI') {
           votes.kaiVote++;
           lizVote=true;
-        } else if (textHere === 'UMBU') {
+        } else if (textHere === 'HUMBU') {
           votes.umbuVote++;
           umbuVote=true;
         } else if (textHere === 'LIZDI' || textHere === 'LIZPI') {
@@ -196,14 +196,16 @@ function nuevoComputo(){
           lizVote=true;
         } else {
           reseteo();
+          return;
         }
-        
+         channel.postMessage(votes);
         reseteo();
+      }}
   /*if(kaiVote || umbuVote || lizVote){
     channel.onmessage = (event) => {
   votes = event.data;
   console.log("Votos actualizados desde otro tab:", votes);*/
 
-  }}
+  
 
 

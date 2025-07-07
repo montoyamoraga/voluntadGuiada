@@ -27,8 +27,8 @@ let votes = {
   lizVote: 0,
 };
 
-const characters = ["KAI", "UMBU", "LIZ"];
-const channel = new BroadcastChannel("decisiones");
+const characters = ["KAI", "HUMBU", "LIZ"];
+const channel = new BroadcastChannel("votes");
 
 
 
