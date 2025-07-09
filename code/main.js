@@ -25,6 +25,8 @@ function setup() {
   
 }
 
+
+
 function draw() {
   //empieza con el modo nombre
   background(200);
@@ -38,6 +40,8 @@ function draw() {
 }
 
 function mousePressed() {
+  
+
   if (popUpActive) {
     // BOTÓN VERDE en popup
     if (
@@ -99,6 +103,8 @@ nuevoComputo();
       textHere = "";
     }
   }
+
+
 }
 
 function reseteo() {
@@ -106,3 +112,4 @@ function reseteo() {
   nameModeActive = true;
   textHere = "";
 }
+

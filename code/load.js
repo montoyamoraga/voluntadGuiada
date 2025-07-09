@@ -31,8 +31,6 @@ const characters = ["KAI", "HUMBU", "LIZ"];
 const channel = new BroadcastChannel("votes");
 
 
-
-
 let fontLinda;
 let fontRegular;
 let fontMedium;
