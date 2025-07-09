@@ -1,10 +1,20 @@
 channel.onmessage = function(event) {
   votes = event.data;
-  // If your UI doesn't update automatically, force a redraw or update here
-  // For p5.js, draw() is called in a loop, so this may be enough
-  // Optionally, log to see updates:
   console.log("Votos actualizados desde otro tab:", votes);
 };
+
+function cargarVotosGuardados() {
+  const votosGuardados = localStorage.getItem('votosGuardados');
+  if (votosGuardados) {
+    votes = JSON.parse(votosGuardados);
+    channel.postMessage(votes); // Sincronizar con otros tabs
+  }
+}
+
+function guardarVotos() {
+  localStorage.setItem('votosGuardados', JSON.stringify(votes));
+  channel.postMessage(votes); // Transmitir cambios
+}
 
 function setup() {
   createCanvas(1280, 720);

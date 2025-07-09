@@ -73,7 +73,12 @@ function nameMode() {
   } else if (letraIndex >= abecedario.length) {
     letraIndex = 0;
   }
-  //////////////////////////////////
+ 
+  //si escribe más allá del tamaño del texBox, se resetea
+  if (textHere.length > 15){
+    reseteo();
+  }
+
   //letra del centro
   //fill(0, 11, 90);
   fill(79);
@@ -113,9 +118,16 @@ function nameMode() {
     );
   }
 
-  
+    //tapar la zona donde las letras se salen del textbox
+  //parte gris claro
+  push();
+  rectMode(CORNER);
+  fill(10, 237, 26);
+  noStroke();
+  rect(halfX+271, halfY-295, 319, 190,0,1800,0,0);
 
-
+  //tapar el final del cuadro de texto
+  pop();
 }
 
 function popUp() {
@@ -199,6 +211,8 @@ function nuevoComputo(){
           return;
         }
          channel.postMessage(votes);
+         guardarVotos();
+         console.log("Votos actualizados:", votes);
         reseteo();
       }}
   /*if(kaiVote || umbuVote || lizVote){
