@@ -31,6 +31,7 @@ function draw() {
   //empieza con el modo nombre
   background(200);
 
+
   if (popUpActive) {
     popUp();
   } else if (nameModeActive) {
@@ -113,3 +114,20 @@ function reseteo() {
   textHere = "";
 }
 
+function dibujarPantallaInicio() {
+  fill(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  text("Haz click o mueve el mouse para comenzar", width/2, height/2);
+}
+
+function iniciarVideo() {
+  pantallaInicio = false;
+  videoReproduciendo = true;
+  videoIntro.show();
+  videoIntro.play();
+  videoIntro.onended(() => {
+    videoReproduciendo = false;
+    videoIntro.hide();
+  });
+}
