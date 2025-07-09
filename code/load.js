@@ -30,7 +30,6 @@ let votes = {
 const characters = ["KAI", "HUMBU", "LIZ"];
 const channel = new BroadcastChannel("votes");
 
-
 let fontLinda;
 let fontRegular;
 let fontMedium;
@@ -38,7 +37,6 @@ let fontSemiBold;
 let fontBold;
 let fontExtraBold;
 let fontBlack;
-
 
 function preload() {
   fontLinda = loadFont("./fonts/chelseaMrkt-reg.ttf");
@@ -49,6 +47,4 @@ function preload() {
   fontExtraBold = loadFont("./fonts/mirador-extrabold.otf");
   fontBlack = loadFont("./fonts/mirador-black.otf");
 }
-
-
 let indexCarruselConocer;
