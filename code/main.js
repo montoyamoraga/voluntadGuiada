@@ -30,9 +30,9 @@ function setup() {
 function draw() {
   //empieza con el modo nombre
   background(200);
-
-
-  if (popUpActive) {
+  if(modoCarruselActive){
+modoConocer(peopleCarrusel[indexCarruselConocer]);
+}else  if(popUpActive) {
     popUp();
   } else if (nameModeActive) {
     nameMode();
@@ -41,8 +41,6 @@ function draw() {
 }
 
 function mousePressed() {
-  
-
   if (popUpActive) {
     // BOTÓN VERDE en popup
     if (
@@ -103,9 +101,7 @@ nuevoComputo();
     ) {
       textHere = "";
     }
-  }
-
-
+  }else if(modoCarruselActive){}
 }
 
 function reseteo() {
@@ -119,15 +115,4 @@ function dibujarPantallaInicio() {
   textSize(32);
   textAlign(CENTER, CENTER);
   text("Haz click o mueve el mouse para comenzar", width/2, height/2);
-}
-
-function iniciarVideo() {
-  pantallaInicio = false;
-  videoReproduciendo = true;
-  videoIntro.show();
-  videoIntro.play();
-  videoIntro.onended(() => {
-    videoReproduciendo = false;
-    videoIntro.hide();
-  });
 }

@@ -13,8 +13,12 @@ function declararVariables(){
   //variables de pantallas
   popUpActive = false;
   nameModeActive = true;
+  modoCarruselActive=true;
   
   //variables para mejorar la legibilidad
   halfX = width / 2;
   halfY = height / 2;
+
+indexCarruselConocer=1;
+
 }

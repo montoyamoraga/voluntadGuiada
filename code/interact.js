@@ -24,46 +24,7 @@ function nameMode() {
   fill(246, 237, 226);
   rect(halfX, height / 4.5, 540, 70, 4);
 
-  //sombras flechas - y +
-  push();
-  strokeJoin(ROUND);
-  stroke(240-80, 155-80, 70-80);
-  strokeWeight(100);
-  triangle(
-    halfX + 429,
-    halfY + 9,
-    halfX + 339,
-    halfY + 59,
-    halfX + 339,
-    halfY - 50 + 9
-  );
-  triangle(
-    halfX - 420 + 9,
-    halfY + 9,
-    halfX - 330 + 9,
-    halfY + 59,
-    halfX - 330 + 9,
-    halfY - 50 + 9
-  );
-  //flechas - y +
-  stroke(240, 155, 70);
-  triangle(
-    halfX + 420,
-    halfY,
-    halfX + 330,
-    halfY + 50,
-    halfX + 330,
-    halfY - 50
-  );
-  triangle(
-    halfX - 420,
-    halfY,
-    halfX - 330,
-    halfY + 50,
-    halfX - 330,
-    halfY - 50
-  );
-  pop();
+  flechas();
 
   yesNoButtons();
 
@@ -195,6 +156,49 @@ function yesNoButtons() {
   endShape();
 }
 
+function flechas(){
+//sombras flechas - y +
+  push();
+  strokeJoin(ROUND);
+  stroke(240-80, 155-80, 70-80);
+  strokeWeight(100);
+  triangle(
+    halfX + 429,
+    halfY + 9,
+    halfX + 339,
+    halfY + 59,
+    halfX + 339,
+    halfY - 50 + 9
+  );
+  triangle(
+    halfX - 420 + 9,
+    halfY + 9,
+    halfX - 330 + 9,
+    halfY + 59,
+    halfX - 330 + 9,
+    halfY - 50 + 9
+  );
+  //flechas - y +
+  stroke(240, 155, 70);
+  triangle(
+    halfX + 420,
+    halfY,
+    halfX + 330,
+    halfY + 50,
+    halfX + 330,
+    halfY - 50
+  );
+  triangle(
+    halfX - 420,
+    halfY,
+    halfX - 330,
+    halfY + 50,
+    halfX - 330,
+    halfY - 50
+  );
+  pop();
+}
+
 function nuevoComputo(){
         if (greenPressed) {
         if (textHere === 'KAI') {
@@ -220,6 +224,29 @@ function nuevoComputo(){
   votes = event.data;
   console.log("Votos actualizados desde otro tab:", votes);*/
 
+  const peopleCarrusel = ["elKai", "elUmbu", "elLiz"];
+
+function modoConocer(quien){
+  background(200);
+  //frame mayor
+  fill(170);
+  noStroke();
+  rectMode(CENTER);
+  rect(halfX, halfY, 1180, 590, 180);
+  flechas();
   
+if(quien === 'elKai') { 
+  fill(200);
+textSize(200);
+text('KAI', halfX, halfY);
 
-
+ellipse(100,100,100,100);
+}else if(quien=== 'elUmbu'){
+  fill(20);
+  text('HUMBU', halfX, halfY);
+  ellipse(200,200,100,100);
+}else if(quien=== 'elLiz'){
+  fill(20);
+  text('LIZ', halfX, halfY);
+  ellipse(300,300,100,100);
+}}

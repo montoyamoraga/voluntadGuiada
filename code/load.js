@@ -49,3 +49,6 @@ function preload() {
   fontExtraBold = loadFont("./fonts/mirador-extrabold.otf");
   fontBlack = loadFont("./fonts/mirador-black.otf");
 }
+
+
+let indexCarruselConocer;
