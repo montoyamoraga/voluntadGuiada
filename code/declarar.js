@@ -12,8 +12,10 @@ function declararVariables(){
 
   //variables de pantallas
   popUpActive = false;
-  nameModeActive = true;
+  nameModeActive = false;
   modoCarruselActive=true;
+ // flechaIzq = false;
+  //flechaDer = false;
   
   //variables para mejorar la legibilidad
   halfX = width / 2;

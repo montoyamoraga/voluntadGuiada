@@ -48,3 +48,6 @@ function preload() {
   fontBlack = loadFont("./fonts/mirador-black.otf");
 }
 let indexCarruselConocer;
+
+let flechaIzq;
+let flechaDer;  

@@ -41,6 +41,17 @@ modoConocer(peopleCarrusel[indexCarruselConocer]);
 }
 
 function mousePressed() {
+  flechaIzq = false;
+  flechaDer = false;
+if  (mouseX > 160 && mouseX < 420 && mouseY > 200 && mouseY < 520) {
+      //background(0);
+    flechaIzq = true;
+    } else if (mouseX > halfX + 160 && mouseX < halfX + 420 && mouseY > 200 && mouseY < 520) {
+      //background(0);
+      flechaDer=true; //flecha hacia la der
+    }
+manejarFlechas();
+
   if (popUpActive) {
     // BOTÓN VERDE en popup
     if (
@@ -53,10 +64,7 @@ function mousePressed() {
 
 nuevoComputo();
     }
-        /*
-  // Enviar votos actualizados a otros tabs
-  channel.postMessage(votes);
-    */
+        
        else if (
       //boton rojo en popUp
       mouseX > halfX - 115 &&
@@ -67,15 +75,11 @@ nuevoComputo();
       reseteo();
     }
   } else if (nameModeActive) {
-    if (mouseX > 160 && mouseX < 420 && mouseY > 200 && mouseY < 520) {
+    if (flechaIzq) {
       //background(0);
       letraIndex -= 1; //flecha hacia la izq
     } else if (
-      mouseX > halfX + 160 &&
-      mouseX < halfX + 420 &&
-      mouseY > 200 &&
-      mouseY < 520
-    ) {
+     flechaDer) {
       //background(0);
       letraIndex += 1; //flecha hacia la der
     }
@@ -91,17 +95,52 @@ nuevoComputo();
         popUpActive = true;
         nameModeActive = false;
       }
-    }
-    // BOTÓN ROJO en nameMode - Borrar
-    else if (
+    }else if (
       mouseX > halfX - 115 &&
       mouseX < halfX - 15 &&
       mouseY > halfY + 150 &&
       mouseY < halfY + 250
     ) {
+    // BOTÓN ROJO en nameMode - Borrar
+
       textHere = "";
     }
-  }else if(modoCarruselActive){}
+  }
+}
+
+function manejarFlechas() {
+  // Solo procesar si alguna flecha está activa
+  if (!flechaIzq && !flechaDer) return;
+
+  // Modo Carrusel de Personajes
+  if (modoCarruselActive) {
+    if (flechaIzq) {
+      indexCarruselConocer = (indexCarruselConocer - 1 + peopleCarrusel.length) % peopleCarrusel.length;
+      console.log("Anterior personaje:", peopleCarrusel[indexCarruselConocer]);
+    } 
+    else if (flechaDer) {
+      indexCarruselConocer = (indexCarruselConocer + 1) % peopleCarrusel.length;
+      console.log("Siguiente personaje:", peopleCarrusel[indexCarruselConocer]);
+    }
+    
+    // Actualizar visualización del carrusel
+    modoConocer(peopleCarrusel[indexCarruselConocer]);
+  }
+  // Modo Selección de Letras
+  else if (nameModeActive) {
+    if (flechaIzq) {
+      letraIndex = (letraIndex - 1 + abecedario.length) % abecedario.length;
+      console.log("Letra anterior:", abecedario[letraIndex]);
+    } 
+    else if (flechaDer) {
+      letraIndex = (letraIndex + 1) % abecedario.length;
+      console.log("Siguiente letra:", abecedario[letraIndex]);
+    }
+  }
+
+  // Resetear estados de flechas después de procesar
+  flechaIzq = false;
+  flechaDer = false;
 }
 
 function reseteo() {

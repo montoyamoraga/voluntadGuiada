@@ -78,17 +78,6 @@ function nameMode() {
       halfY - 180
     );
   }
-
-    //tapar la zona donde las letras se salen del textbox
-  //parte gris claro
-  push();
-  rectMode(CORNER);
-  fill(10, 237, 26);
-  noStroke();
-  rect(halfX+271, halfY-295, 319, 190,0,1800,0,0);
-
-  //tapar el final del cuadro de texto
-  pop();
 }
 
 function popUp() {
