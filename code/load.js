@@ -40,18 +40,18 @@ let umbuAlone;
 let lizAlone;
 
 function preload() {
-  fontLinda = loadFont("./../fonts/chelseaMrkt-reg.ttf");
-  fontRegular = loadFont("./../fonts/mirador-regular.otf");
-  fontMedium = loadFont("./../fonts/mirador-medium.otf");
-  fontSemiBold = loadFont("./../fonts/mirador-semibold.otf");
-  fontBold = loadFont("./../fonts/mirador-bold.otf");
-  fontExtraBold = loadFont("./../fonts/mirador-extrabold.otf");
-  fontBlack = loadFont("./../fonts/mirador-black.otf");
+  fontLinda = loadFont("./fonts/chelseaMrkt-reg.ttf");
+  fontRegular = loadFont(".fonts/mirador-regular.otf");
+  fontMedium = loadFont("./fonts/mirador-medium.otf");
+  fontSemiBold = loadFont("./fonts/mirador-semibold.otf");
+  fontBold = loadFont("./fonts/mirador-bold.otf");
+  fontExtraBold = loadFont("./fonts/mirador-extrabold.otf");
+  fontBlack = loadFont("./fonts/mirador-black.otf");
 
-  kaiAlone = loadImage("./../images/kai.png");
-  umbuAlone = loadImage("./../images/umbu.png");
-  lizAlone = loadImage("./../images/liz.png");
-  videoIntro = createVideo('./../video/animacionVoluntadGuiada.mp4', () => {
+  kaiAlone = loadImage("./images/kai.png");
+  umbuAlone = loadImage("./images/umbu.png");
+  lizAlone = loadImage("./images/liz.png");
+  videoIntro = createVideo('./video/animacionVoluntadGuiada.mp4', () => {
   videoIntro.hide();
   });
 }
