@@ -2,7 +2,7 @@ function nameMode() {
   background(79);
   rectMode(CENTER);
 
-  // Marco principal del modo de nombre
+  // Frame mayor
   fill(170);
   noStroke();
   rect(halfX, halfY, 1180, 590, 180);
@@ -94,6 +94,7 @@ apoyo a ` + textHere + " ?",
 
 function yesNoButtons() {
   // Botón rojo (equis)
+  noStroke();
   fill(100, 20, 20); // sombra
   rect(halfX - 65 + 6, halfY + 200 + 6, 100, 100, 20);
   fill(235, 30, 30); // color principal
@@ -166,46 +167,76 @@ function nuevoComputo() {
 const peopleCarrusel = ["elKai", "elUmbu", "elLiz"];
 
 function modoConocer(quien) {
-  background(170);
-  fill(20);
-  noStroke();
+  background(79);
+ 
   rectMode(CENTER);
   imageMode(CENTER);
 
+  //frame mayor
+    fill(170);
+  rect(halfX, halfY, 1180, 590, 180);
+
   flechas(); // Mostrar flechas para cambiar personaje
 
-  // Información personalizada según el personaje
-  if (quien === 'elKai') {
-    textFont(fontBold);
-    textAlign(LEFT);
-    textSize(75);
-    text('KAI', halfX - 500, halfY - 292);
-    image(kaiAlone, halfX, halfY - 35, 420, 680);
-    textSize(30);
-    textAlign(CENTER);
-    textFont(fontRegular);
-    text('"Antes éramos felices, si llega alguien más todo se arruinará"', halfX, halfY + 300);
 
-  } else if (quien === 'elUmbu') {
+ // boton continuar
+ fill(20, 120, 20);
+ rect(halfX+365+7, halfY - 227+7, 265, 70, 7); 
+
+ fill(30, 225, 30);
+ rect(halfX+365, halfY - 227, 265, 70, 7); 
+ textFont(fontMedium);
+ textSize(44);
+ fill(235);
+ text('Continuar',halfX+345, halfY - 232);
+ push();
+ fill(235);
+ noStroke();
+ let flechaX = halfX + 458; // posición X de la flecha (ajusta si es necesario)
+ let flechaY = halfY - 226; // posición Y centrada con el texto
+ beginShape();
+ vertex(flechaX, flechaY - 18);   // punta superior
+ vertex(flechaX + 32, flechaY);   // punta derecha
+ vertex(flechaX, flechaY + 18);   // punta inferior
+ vertex(flechaX + 10, flechaY);   // base de la flecha (centro)
+ endShape(CLOSE);
+ pop();
+
+ fill(20);
+ noStroke();
+
+ // Información personalizada según el personaje
+ if (quien === 'elKai') {
     textFont(fontBold);
     textAlign(LEFT);
     textSize(75);
-    text('HUMBU', halfX - 500, halfY - 292);
-    image(umbuAlone, halfX, halfY + 10, 350, 500);
-    textSize(30);
+    text('KAI', halfX - 500, halfY - 232);
+    image(kaiAlone, halfX, halfY - 35, 420, 680);
+    textSize(36);
     textAlign(CENTER);
-    textFont(fontRegular);
-    text('"Yo solo quiero tener amigues con quien jugar :("', halfX, halfY + 300);
+    textFont(fontMedium);
+    text('"Antes éramos felices, si llega alguien más todo se arruinará"', halfX, halfY + 250);
+
+ } else if (quien === 'elUmbu') {
+    textFont(fontBold);
+    textAlign(LEFT);
+    textSize(75);
+    text('HUMBU', halfX - 500, halfY - 232);
+    image(umbuAlone, halfX, halfY + 10, 350, 500);
+    textSize(36);
+    textAlign(CENTER);
+    textFont(fontMedium);
+    text('"Yo solo quiero tener amigues con quien jugar :("', halfX, halfY + 250);
 
   } else if (quien === 'elLiz') {
     textFont(fontBold);
-    textSize(65);
+    textSize(75);
     textAlign(LEFT);
-    text('LIZPI y LIZDI', halfX - 500, halfY - 290);
+    text('LIZPI y LIZDI', halfX - 500, halfY - 232);
     image(lizAlone, halfX, halfY + 10, 530, 700);
-    textSize(30);
+    textSize(36);
     textAlign(CENTER);
-    textFont(fontRegular);
-    text('"Nos gustaría que pudieramos ser amigxs todxs"', halfX, halfY + 300);
+    textFont(fontMedium);
+    text('"Nos gustaría que pudieramos ser amigxs todxs"', halfX, halfY + 250);
   }
 }

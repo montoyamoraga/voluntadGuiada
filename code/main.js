@@ -4,7 +4,7 @@ let videoEnded = false;
 let interfazInicializada = false;
 
 let tiempoInactivo = 0;
-let maxInactividad = 5000; // Tiempo máximo sin interacción (ms)
+let maxInactividad = 30000; // Tiempo máximo sin interacción (ms)
 let ultimoMovimiento = 0;
 
 // Recibe votos desde otros tabs usando BroadcastChannel
@@ -106,9 +106,9 @@ function mousePressed() {
   flechaDer = false;
 
   // Detecta si se hizo clic en el área izquierda o derecha
-  if (mouseX > 160 && mouseX < 420 && mouseY > 200 && mouseY < 520) {
+  if (mouseX > halfX - 485 && mouseX < halfX - 265 && mouseY > halfY - 115 && mouseY < halfY + 120) {
     flechaIzq = true;
-  } else if (mouseX > halfX + 160 && mouseX < halfX + 420 && mouseY > 200 && mouseY < 520) {
+  } else if (mouseX > halfX + 270 && mouseX < halfX + 485 && mouseY > halfY-115 && mouseY < halfY + 120) {
     flechaDer = true;
   }
 
@@ -148,7 +148,7 @@ function mousePressed() {
   }
 
   // Salida del modo carrusel (volver al modo de nombre)
-  if (modoCarruselActive && mouseX > halfX - 100 && mouseX < halfX + 100 && mouseY > halfY - 100 && mouseY < halfY + 100) {
+  if (modoCarruselActive && mouseX > halfX - 200 && mouseX < halfX + 200 && mouseY > halfY - 220 && mouseY < halfY + 220) {
     modoCarruselActive = false;
     nameModeActive = true;
   }
