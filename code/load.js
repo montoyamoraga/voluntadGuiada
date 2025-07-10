@@ -41,7 +41,7 @@ let lizAlone;
 
 function preload() {
   fontLinda = loadFont("./fonts/chelseaMrkt-reg.ttf");
-  fontRegular = loadFont(".fonts/mirador-regular.otf");
+  fontRegular = loadFont("./fonts/mirador-regular.otf");
   fontMedium = loadFont("./fonts/mirador-medium.otf");
   fontSemiBold = loadFont("./fonts/mirador-semibold.otf");
   fontBold = loadFont("./fonts/mirador-bold.otf");
