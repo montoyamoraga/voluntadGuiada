@@ -216,7 +216,7 @@ function nuevoComputo(){
   const peopleCarrusel = ["elKai", "elUmbu", "elLiz"];
 
 function modoConocer(quien){
-  background(200);
+  background(170);
   //frame mayor
   fill(20);
   noStroke();
@@ -232,7 +232,7 @@ if(quien === 'elKai') {
     textFont(fontBlack);
     textAlign(LEFT);
 text('KAI', halfX-600, halfY-200);
-image(kaiAlone, halfX, halfY-10,500,650);
+image(kaiAlone, halfX, halfY-35,420,680);
 textSize(30);
   textAlign(CENTER);
   textFont(fontRegular)
@@ -241,7 +241,7 @@ textSize(30);
     textFont(fontBlack);
   textAlign(LEFT);
   text('HUMBU', halfX-600, halfY-200);
-  image(umbuAlone, halfX, halfY+10,400,550);
+  image(umbuAlone, halfX, halfY+10,350,500);
 textSize(30);
   textAlign(CENTER);
   textFont(fontRegular)

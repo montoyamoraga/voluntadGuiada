@@ -54,8 +54,42 @@ function preload() {
   kaiAlone = loadImage("./images/kai-solo.png");
   umbuAlone = loadImage("./images/umbu-solo.png");
   lizAlone = loadImage("./images/liz-solo.png");
+
+    videoIntro = createVideo('video/animation.mp4', () => {
+    videoIntro.hide();
+  });
 }
 let indexCarruselConocer;
 
 let flechaIzq;
 let flechaDer;  
+
+
+
+function declararVariables(){
+  abecedario = [
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+    "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+  ];
+  //defino frameRate para crearel cursor parpadeante
+  frameRate(30);
+
+  //variables del texto
+   textHere = "";
+  letraIndex = 0;
+
+  //variables de pantallas
+  popUpActive = false;
+  nameModeActive = false;
+  modoCarruselActive=true;
+ // flechaIzq = false;
+  //flechaDer = false;
+  
+  //variables para mejorar la legibilidad
+  halfX = width / 2;
+  halfY = height / 2;
+
+indexCarruselConocer=1;
+
+
+}
