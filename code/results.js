@@ -11,7 +11,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1280, 720);
+  
+  createCanvas(windowWidth, windowHeight);
+
   cargarVotosGuardados();
   currentWinner = obtenerGanador();
 
@@ -28,10 +30,10 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(100,100,200);
   if (currentWinner) {
     imageMode(CENTER);
-    image(currentWinner, width / 2, height / 2, 1280, 720);
+    image(currentWinner, width / 2, height / 2, windowWidth, windowHeight);
   }
 }
 

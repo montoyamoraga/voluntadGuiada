@@ -29,7 +29,10 @@ function guardarVotos() {
 }
 
 function setup() {
-  createCanvas(1280, 720);
+  //createCanvas(1280, 720);
+  //createCanvas(3840, 2160);
+  createCanvas(windowWidth, windowHeight);
+  
   declararVariables();
 
   ultimoMovimiento = millis(); // Marca el momento inicial de actividad
