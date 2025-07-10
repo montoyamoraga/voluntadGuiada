@@ -218,24 +218,23 @@ function nuevoComputo(){
 function modoConocer(quien){
   background(200);
   //frame mayor
-  fill(170);
+  fill(20);
   noStroke();
   rectMode(CENTER);
-  rect(halfX, halfY, 1180, 590, 180);
+imageMode(CENTER);
+  textAlign(CENTER);
+  textSize(400);
+ //rect(halfX, halfY, 1180, 590, 180);
   flechas();
   
 if(quien === 'elKai') { 
-  fill(200);
-textSize(200);
 text('KAI', halfX, halfY);
+image(kaiAlone, halfX, halfY-10,500,650);
 
-ellipse(100,100,100,100);
 }else if(quien=== 'elUmbu'){
-  fill(20);
   text('HUMBU', halfX, halfY);
-  ellipse(200,200,100,100);
+  image(umbuAlone, halfX, halfY+10,400,550);
 }else if(quien=== 'elLiz'){
-  fill(20);
   text('LIZ', halfX, halfY);
-  ellipse(300,300,100,100);
+  image(lizAlone, halfX, halfY+10,630,550);
 }}

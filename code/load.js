@@ -38,6 +38,10 @@ let fontBold;
 let fontExtraBold;
 let fontBlack;
 
+let kaiAlone;
+let umbuAlone; 
+let lizAlone;
+
 function preload() {
   fontLinda = loadFont("./fonts/chelseaMrkt-reg.ttf");
   fontRegular = loadFont("./fonts/mirador-regular.otf");
@@ -46,6 +50,10 @@ function preload() {
   fontBold = loadFont("./fonts/mirador-bold.otf");
   fontExtraBold = loadFont("./fonts/mirador-extrabold.otf");
   fontBlack = loadFont("./fonts/mirador-black.otf");
+
+  kaiAlone = loadImage("./images/kai-solo.png");
+  umbuAlone = loadImage("./images/umbu-solo.png");
+  lizAlone = loadImage("./images/liz-solo.png");
 }
 let indexCarruselConocer;
 
