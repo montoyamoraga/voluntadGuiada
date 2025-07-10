@@ -1,0 +1,10 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* <-- Esto quita la scrollbar */
+    background-color: black; /* Opcional, para que no se vea blanco fuera del canvas */
+}
+
+canvas {
+    display: block; /* Quita espacio extra debajo del canvas */
+}

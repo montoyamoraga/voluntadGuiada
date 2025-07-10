@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/addons/p5.sound.min.js"></script>
+    <script src="./libraries/p5.js"></script>
+    <script src="./libraries/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
   <style>
   html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* <-- Esto quita la scrollbar */
-    background-color: black; /* Opcional, para que no se vea blanco fuera del canvas */
+    /* <-- Esto quita la scrollbar */
+    overflow: hidden; 
+    /* Opcional, para que no se vea blanco fuera del canvas */
+    background-color: black; 
   }
-
+  /* Quita espacio extra debajo del canvas */
   canvas {
-    display: block; /* Quita espacio extra debajo del canvas */
+    display: block; 
   }
 </style>
   </head>
   <body>
-  
     <main>
     </main>
-    <script src="load.js"></script>
-    <script src="main.js"></script>
-    <script src="interact.js"></script>
+    <script src="./js/load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/interact.js"></script>
   </body>
 </html> 
