@@ -3,9 +3,9 @@ let voteCounts = { kaiVote: 0, umbuVote: 0, lizVote: 0 };
 let kaiImg, umbuImg, lizImg, currentWinner;
 
 function preload() {
-  kaiImg = loadImage("./imgs/kaiWin.png");
-  umbuImg = loadImage("./imgs/umbuWin.png");
-  lizImg = loadImage("./imgs/lizWin.png");
+  kaiImg = loadImage("./../images/kaiWin.png");
+  umbuImg = loadImage("./../images/umbuWin.png");
+  lizImg = loadImage("./../images/lizWin.png");
 }
 
 function setup() {
