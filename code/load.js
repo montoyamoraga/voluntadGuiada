@@ -55,7 +55,7 @@ function preload() {
   umbuAlone = loadImage("./images/umbu-solo.png");
   lizAlone = loadImage("./images/liz-solo.png");
 
-    videoIntro = createVideo('video/animation.mp4', () => {
+    videoIntro = createVideo('video/animacionVoluntadGuiada.mp4', () => {
     videoIntro.hide();
   });
 }
