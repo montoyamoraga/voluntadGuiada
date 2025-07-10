@@ -222,19 +222,38 @@ function modoConocer(quien){
   noStroke();
   rectMode(CENTER);
 imageMode(CENTER);
-  textAlign(CENTER);
-  textSize(400);
+  //textAlign(CENTER);
+  textSize(100);
  //rect(halfX, halfY, 1180, 590, 180);
   flechas();
+
   
 if(quien === 'elKai') { 
-text('KAI', halfX, halfY);
+    textFont(fontBlack);
+    textAlign(LEFT);
+text('KAI', halfX-600, halfY-200);
 image(kaiAlone, halfX, halfY-10,500,650);
-
+textSize(30);
+  textAlign(CENTER);
+  textFont(fontRegular)
+  text('"Antes éramos felices, si llega alguien más lo arruinará todo"', halfX, halfY+300);
 }else if(quien=== 'elUmbu'){
-  text('HUMBU', halfX, halfY);
+    textFont(fontBlack);
+  textAlign(LEFT);
+  text('HUMBU', halfX-600, halfY-200);
   image(umbuAlone, halfX, halfY+10,400,550);
+textSize(30);
+  textAlign(CENTER);
+  textFont(fontRegular)
+  text('"Yo solo quiero tener amigues con los que jugar :("', halfX, halfY+300);
 }else if(quien=== 'elLiz'){
-  text('LIZ', halfX, halfY);
+    textFont(fontBlack);
+  textSize(80);
+  textAlign(LEFT);
+  text('LIZPI y LIZDI', halfX-600, halfY-210);
   image(lizAlone, halfX, halfY+10,630,550);
+  textSize(30);
+  textAlign(CENTER);
+  textFont(fontRegular)
+  text('"Nos gustaría que pudieramos ser amigues entre todes"', halfX, halfY+300);
 }}
