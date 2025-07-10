@@ -1,61 +1,76 @@
 /*
-WebSocket server example
+  Websocket server with express.js
+  (https://www.npmjs.com/package/express) and ws.js
+  (https://www.npmjs.com/package/ws)
+  Serves an index page from /public. That page makes
+  a websocket client back to this server.
 
-This server does not serve any HTML, or respond to
-HTTP requests, only websocket requests. 
-
-created 11 Nov 2017
-modified 26 Feb 2023
-by Tom Igoe
+  created 17 Jan 2021
+  modified 23 Feb 2023
+  by Tom Igoe
 */
-let WebSocketServer = require('ws').Server;   // webSocket library
+// include express, http, and ws libraries:
+const express = require("express");
+// the const {} syntax is called destructuring.
+// it allows you to pull just the one function 
+// you need from the libraries below without 
+// making an instance of the whole library:
+const {createServer} = require("http");
+const {WebSocketServer} = require("ws");
+// make an instance of express:
+const app = express();
+// serve static content from the project's public folder:
+app.use(express.static("public"));
+// make an instance of http server using express instance:
+const server = createServer(app);
+// WebSocketServer needs the http server instance:
+const wss = new WebSocketServer({ server });
+// list of client connections:
+var clients = new Array();
 
-// configure the webSocket server:
-
- // port number for the webSocket server
-const wssPort = process.env.PORT || 8080;          
-
-// the webSocket server
-const wss = new WebSocketServer({port: wssPort}); 
-
- // list of client connections
-let clients = new Array;        
-
-
-// ------------------------ webSocket Server functions
-function handleConnection(client, request) {
-     // you have a new client
-	console.log("New Connection");       
-    // add this client to the clients array
-	clients.push(client);    
-
-	function endClient() {
-		// when a client closes its connection
-		// get the client's position in the array
-		// and delete it from the array:
-		let position = clients.indexOf(client);
-		clients.splice(position, 1);
-		console.log("connection closed");
-	}
-
-	// if a client sends a message, print it out:
-	function clientResponse(data) {
-		console.log(request.connection.remoteAddress + ': ' + data);
-		broadcast(request.connection.remoteAddress + ': ' + data);
-	}
-
-	// set up client event listeners:
-	client.on('message', clientResponse);
-	client.on('close', endClient);
+// this runs after the http server successfully starts:
+function serverStart() {
+  var port = this.address().port;
+  console.log("Server listening on port " + port);
 }
 
-// This function broadcasts messages to all webSocket clients
-function broadcast(data) {
-	// iterate over the array of clients & send data to each
-	for (c in clients) {
-		clients[c].send(JSON.stringify(data));
-	}
+// this handles websocket connections:
+function handleClient(thisClient, request) {
+  // you have a new client
+  console.log("New Connection"); 
+  // add this client to the clients array
+
+  clients.push(thisClient); 
+  
+  function endClient() {
+    // when a client closes its connection
+    // get the client's position in the array
+    // and delete it from the array:
+    var position = clients.indexOf(thisClient);
+    clients.splice(position, 1);
+    console.log("connection closed");
+  }
+
+  // if a client sends a message, print it out:
+  function clientResponse(data) {
+    console.log(data.toString());
+    broadcast(data.toString());
+  }
+
+  // This function broadcasts messages to all webSocket clients
+  function broadcast(data) {
+    // iterate over the array of clients & send data to each
+    for (let c in clients) {
+      clients[c].send(data);
+    }
+  }
+
+  // set up client event listeners:
+  thisClient.on("message", clientResponse);
+  thisClient.on("close", endClient);
 }
 
-// listen for clients and handle them:
-wss.on('connection', handleConnection);
+// start the server:
+server.listen(process.env.PORT || 3000, serverStart);
+// start the websocket server listening for clients:
+wss.on("connection", handleClient);
