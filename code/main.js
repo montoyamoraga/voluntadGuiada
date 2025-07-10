@@ -132,7 +132,7 @@ function mousePressed() {
     }
 
     // Botón de confirmar letra
-    if (mouseX > halfX + 15 && mouseX < halfX + 115 && mouseY > halfY + 150 && mouseY < halfY + 250) {
+    if ((mouseX > halfX + 15 && mouseX < halfX + 115 && mouseY > halfY + 150 && mouseY < halfY + 250)|| (mouseX > halfX - 40 && mouseX < halfX + 40 && mouseY > halfY - 42 && mouseY < halfY + 42)) {
       textHere += abecedario[letraIndex];
 
       // Si el nombre coincide con alguno predefinido, se activa el pop-up
@@ -148,9 +148,10 @@ function mousePressed() {
   }
 
   // Salida del modo carrusel (volver al modo de nombre)
-  if (modoCarruselActive && mouseX > halfX - 200 && mouseX < halfX + 200 && mouseY > halfY - 220 && mouseY < halfY + 220) {
+  if (modoCarruselActive &&  (mouseX > halfX + 215 && mouseX < halfX + 510 && mouseY > halfY - 270 && mouseY < halfY - 180)) {
     modoCarruselActive = false;
     nameModeActive = true;
+    //background(0,200,0);
   }
 }
 

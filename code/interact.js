@@ -68,12 +68,13 @@ function nameMode() {
 }
 
 function popUp() {
+  background(79);
   // Fondo semitransparente
   fill(0, 110);
   rect(halfX, halfY, 1280, 720);
 
   // Ventana principal del pop-up
-  fill(190, 210, 240);
+  fill(179);
   stroke(20);
   strokeWeight(8);
   rect(halfX, halfY + 20, 800, 510, 50);
@@ -82,8 +83,9 @@ function popUp() {
   textAlign(CENTER);
   strokeWeight(1);
   fill(20);
+  textFont(fontMedium);
   text(
-    `quieres darle tu 
+    `¿Quieres darle tu 
 apoyo a ` + textHere + " ?",
     halfX,
     halfY - 1
@@ -215,7 +217,7 @@ function modoConocer(quien) {
     textSize(36);
     textAlign(CENTER);
     textFont(fontMedium);
-    text('"Antes éramos felices, si llega alguien más todo se arruinará"', halfX, halfY + 250);
+    text('"Antes éramos felices, si llega alguien más todo se arruina"', halfX, halfY + 250);
 
  } else if (quien === 'elUmbu') {
     textFont(fontBold);
